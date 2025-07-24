@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary App</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>Initial State</h2>
+
+        <div id="input-group" class="input-group">
+            <input type="text" placeholder="Enter a word to add to dictionary" />
+            <button>Add Word</button>
+        </div>
+        <div id="msg"></div>
+        <input type="text" class="suggestions-input" placeholder="Start typing to see suggestions..." />
+        <ul id="suggestions-list" class="suggestions-list"></ul>
+
+        <div class="counter-card">
+            <span class="count">0</span>
+            <div class="label">Words in Dictionary</div>
+        </div>
+    </div>
+    <script src="handlers.js" type="module"></script>
+</body>
+
+</html>
