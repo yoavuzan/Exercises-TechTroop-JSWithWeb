@@ -1,0 +1,4 @@
+const wishes = document.getElementById("withes")
+const div = document.createElement("div")
+div.className ="post-box"
+const p = document.createElement("p")
