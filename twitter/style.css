@@ -1,0 +1,134 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  padding: 30px;
+}
+
+#post-text {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#post-text:focus {
+  border-color: #1da1f2;
+}
+
+#twitt {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#twitt:hover {
+  background-color: #0d8ddb;
+}
+/* Container for all posts */
+#posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each post box */
+.post {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Post text */
+.post-text {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Delete button */
+.deletePost {
+  color: #e74c3c;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+/* Comment container */
+.comments {
+  margin-top: 15px;
+  padding-left: 10px;
+  border-left: 3px solid #ddd;
+}
+
+/* Each comment block */
+.comment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.comment {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Delete comment (X) */
+.delete-comment {
+  color: #999;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* Comment input field */
+.comment-input {
+  width: calc(100% - 120px);
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Comment button */
+.comment-button {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.comment-button:hover {
+  background-color: #0d8de1;
+}
