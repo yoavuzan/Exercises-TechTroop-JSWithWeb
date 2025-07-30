@@ -1,4 +1,4 @@
-const API_KEY = "yeywbSH4Hc6qi5yfogJQF7p9DwxVz91d";
+const API_KEY = "";
 const url = `https://api.giphy.com/v1/stickers/trending?api_key=${API_KEY}`;
 
 fetch(url)
