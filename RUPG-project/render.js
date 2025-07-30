@@ -14,9 +14,9 @@ class Render {
 
   renderFriends() {
     const friendsList = document.querySelector("#friends");
-    friendsList.innerHTML = ""; 
+    friendsList.innerHTML = `<h3>Friends</h3>`;
 
-    this.user.friendsNames.forEach(friend => {
+    this.user.friendsNames.forEach((friend) => {
       const li = document.createElement("li");
       li.textContent = `${friend.firstName} ${friend.lastName}`;
       friendsList.appendChild(li);
@@ -25,7 +25,8 @@ class Render {
 
   renderQuote() {
     const quoteSection = document.getElementById("favoQoute");
-    quoteSection.innerHTML = `<p>${this.user.getQuote()}</p>`;
+    quoteSection.innerHTML = `<h3>Favorite Quote</h3>
+    <p>${this.user.getQuote()}</p>`;
   }
 
   renderPokemon() {
