@@ -81,10 +81,12 @@ async function generateAboutMe() {
 }
 
 export async function invokeAPI() {
-  const mainUser = await generateUser();
-  const quote = await generateQuote();
-  const pokemon = await generatePokemon();
-  const aboutMe = await generateAboutMe();
+  const [mainUser, quote, pokemon, aboutMe] = await Promise.all([
+    generateUser(),
+    generateQuote(),
+    generatePokemon(),
+    generateAboutMe(),
+  ]);
   return { ...mainUser, ...quote, ...pokemon, ...aboutMe };
 }
 
