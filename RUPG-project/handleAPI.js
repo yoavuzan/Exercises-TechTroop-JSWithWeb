@@ -47,8 +47,11 @@ function makeFriendsList(friendsData) {
 }
 
 async function generateUser() {
-  const mainUserData = await fetchData(handleUrlUsers(1, true), "UsersAPI").results;
-  const friendsData = await fetchData(handleUrlUsers(6, false), "UsersAPI").results;
+  const mainUserResponse = await fetchData(handleUrlUsers(1, true), "UsersAPI");
+  const mainUserData = mainUserResponse.results;
+
+  const friendsResponse = await fetchData(handleUrlUsers(6, false), "UsersAPI");
+  const friendsData = friendsResponse.results;
 
   const friends = makeFriendsList(friendsData);
   const mainUser = makeMainUser(mainUserData[0], friends);
@@ -58,14 +61,14 @@ async function generateUser() {
 
 async function generateQuote() {
   const quote = await fetchData("https://api.kanye.rest", "QuoteAPI");
-  return quote
+  return quote;
 }
 
 export async function invokeAPI() {
   const mainUser = await generateUser();
   const quote = await generateQuote();
-  console.log(quote)
-  return {...mainUser,...quote};
+
+  
+  return { ...mainUser, ...quote };
 }
 
-invokeAPI()
