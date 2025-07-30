@@ -1,4 +1,4 @@
-const API_KEY = "yeywbSH4Hc6qi5yfogJQF7p9DwxVz91d";
+const API_KEY = "";
 
 document.getElementById("searchBtn").addEventListener("click", () => {
   const search = document.getElementById("searchTxt").value.trim();
