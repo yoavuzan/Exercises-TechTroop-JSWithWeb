@@ -28,14 +28,14 @@ class Render {
     quoteSection.innerHTML = `<p>${this.user.getQuote()}</p>`;
   }
 
-//   renderPokemon(pokemon) {
-//     const pokeSection = document.getElementById("favoPoke");
-//     pokeSection.innerHTML = `
-//       <h3>Favorite Pokémon</h3>
-//       <p>${pokemon.name}</p>
-//       <img src="${pokemon.image}" alt="${pokemon.name}" width="100" />
-//     `;
-//   }
+  renderPokemon() {
+    const pokeSection = document.getElementById("favoPoke");
+    pokeSection.innerHTML = `
+      <h3>Favorite Pokémon</h3>
+      <p>${this.user.namePok}</p>
+      <img src="${this.user.imgPok}" alt="${this.user.namePok}" width="100" />
+    `;
+  }
 
 //   renderAboutMe(text) {
 //     const aboutSection = document.getElementById("AboutMe");
@@ -46,7 +46,7 @@ class Render {
     this.renderMainUser();
     this.renderFriends();
     this.renderQuote();
-    // if (pokemon) this.renderPokemon(pokemon);
+    this.renderPokemon();
     // if (about) this.renderAboutMe(about);
   }
 }

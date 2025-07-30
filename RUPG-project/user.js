@@ -7,6 +7,8 @@ class User {
     this.photo = info.photo;
     this.friendsNames = info.friendsNames || [];
     this.quote = info.quote;
+    this.namePok = info.namePok;
+    this.imgPok = info.imgPok;
   }
 
   getFullName() {

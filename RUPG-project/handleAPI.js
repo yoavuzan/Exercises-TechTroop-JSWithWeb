@@ -63,12 +63,18 @@ async function generateQuote() {
   const quote = await fetchData("https://api.kanye.rest", "QuoteAPI");
   return quote;
 }
+async function generatePokemon() {
+  const id = Math.floor(Math.random() * 954 + 1);
+  const pokemon = await fetchData(`https://pokeapi.co/api/v2/item/${id}`);
+  return { namePok: pokemon.name, imgPok: pokemon.sprites.default };
+}
 
 export async function invokeAPI() {
   const mainUser = await generateUser();
   const quote = await generateQuote();
+  const pokemon = await generatePokemon();
 
-  
-  return { ...mainUser, ...quote };
+  return { ...mainUser, ...quote, ...pokemon };
 }
+
 
