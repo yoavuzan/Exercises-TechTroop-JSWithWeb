@@ -37,17 +37,17 @@ class Render {
     `;
   }
 
-//   renderAboutMe(text) {
-//     const aboutSection = document.getElementById("AboutMe");
-//     aboutSection.innerHTML = `<h3>About Me</h3><p>${text}</p>`;
-//   }
+  renderAboutMe() {
+    const aboutSection = document.getElementById("AboutMe");
+    aboutSection.innerHTML = `<h3>About Me</h3><p>${this.user.aboutMe}</p>`;
+  }
 
   renderAll() {
     this.renderMainUser();
     this.renderFriends();
     this.renderQuote();
     this.renderPokemon();
-    // if (about) this.renderAboutMe(about);
+    this.renderAboutMe();
   }
 }
 export default Render;

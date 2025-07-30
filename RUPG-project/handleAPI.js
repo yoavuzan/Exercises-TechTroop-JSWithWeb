@@ -65,16 +65,27 @@ async function generateQuote() {
 }
 async function generatePokemon() {
   const id = Math.floor(Math.random() * 954 + 1);
-  const pokemon = await fetchData(`https://pokeapi.co/api/v2/item/${id}`);
+  const pokemon = await fetchData(
+    `https://pokeapi.co/api/v2/item/${id}`,
+    "PokemonAPI"
+  );
   return { namePok: pokemon.name, imgPok: pokemon.sprites.default };
+}
+
+async function generateAboutMe() {
+  const txt = await fetchData(
+    "https://baconipsum.com/api/?type=all-meat&paras=3&start-with-lorem=1&format=JSON",
+    "AboutMeAPI"
+  );
+  return { aboutMe: txt[0] };
 }
 
 export async function invokeAPI() {
   const mainUser = await generateUser();
   const quote = await generateQuote();
   const pokemon = await generatePokemon();
-
-  return { ...mainUser, ...quote, ...pokemon };
+  const aboutMe = await generateAboutMe();
+  return { ...mainUser, ...quote, ...pokemon, ...aboutMe };
 }
 
-
+invokeAPI();

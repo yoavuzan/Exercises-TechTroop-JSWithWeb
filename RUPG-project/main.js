@@ -1,7 +1,11 @@
 import User from "./user.js";
 import Render from "./render.js";
 import { invokeAPI } from './handleAPI.js';
-//document.getElementById("genarateUserBtn")
+
+document.getElementById("genarateUserBtn").addEventListener("click",async function(){
+  
+}
+)
 
 async function main() {
     

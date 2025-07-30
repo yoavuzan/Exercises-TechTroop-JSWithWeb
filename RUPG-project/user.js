@@ -9,6 +9,7 @@ class User {
     this.quote = info.quote;
     this.namePok = info.namePok;
     this.imgPok = info.imgPok;
+    this.aboutMe = info.aboutMe;
   }
 
   getFullName() {
