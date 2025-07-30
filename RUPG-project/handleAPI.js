@@ -13,14 +13,6 @@ async function fetchData(url, nameApi) {
   return data;
 }
 
-function handleUrlUsers(countOfUsers, withLocAndPic = false) {
-  let url = `https://randomuser.me/api/?results=${countOfUsers}&inc=name`;
-  if (withLocAndPic) {
-    url += ",location,picture";
-  }
-  return url + "&noinfo";
-}
-
 function makeMainUser(userData, friends) {
   const firstName = userData.name.first;
   const lastName = userData.name.last;
@@ -59,6 +51,14 @@ async function generateUser() {
   return mainUser;
 }
 
+function handleUrlUsers(countOfUsers, withLocAndPic = false) {
+  let url = `https://randomuser.me/api/?results=${countOfUsers}&inc=name`;
+  if (withLocAndPic) {
+    url += ",location,picture";
+  }
+  return url + "&noinfo";
+}
+
 async function generateQuote() {
   const quote = await fetchData("https://api.kanye.rest", "QuoteAPI");
   return quote;
@@ -80,14 +80,16 @@ async function generateAboutMe() {
   return { aboutMe: txt[0] };
 }
 
-export async function invokeAPI() {
-  const [mainUser, quote, pokemon, aboutMe] = await Promise.all([
-    generateUser(),
-    generateQuote(),
-    generatePokemon(),
-    generateAboutMe(),
-  ]);
-  return { ...mainUser, ...quote, ...pokemon, ...aboutMe };
+export async function invokeAPIs() {
+  try {
+    const [mainUser, quote, pokemon, aboutMe] = await Promise.all([
+      generateUser(),
+      generateQuote(),
+      generatePokemon(),
+      generateAboutMe(),
+    ]);
+    return { ...mainUser, ...quote, ...pokemon, ...aboutMe };
+  } catch (err) {
+    throw err;
+  }
 }
-
-invokeAPI();

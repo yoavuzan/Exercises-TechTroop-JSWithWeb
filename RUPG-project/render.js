@@ -1,5 +1,5 @@
 class Render {
-  constructor(user) {
+  constructor(user = {}) {
     this.user = user;
   }
 
@@ -41,6 +41,14 @@ class Render {
   renderAboutMe() {
     const aboutSection = document.getElementById("AboutMe");
     aboutSection.innerHTML = `<h3>About Me</h3><p>${this.user.aboutMe}</p>`;
+  }
+
+  renderError(err) {
+    const body = document.body;
+    const errorMsg = document.createElement("p");
+    errorMsg.className = "errorHandling";
+    errorMsg.innerHTML = `Sorry! ${err.message}`;
+    body.appendChild(errorMsg);
   }
 
   renderAll() {
