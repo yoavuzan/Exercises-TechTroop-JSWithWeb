@@ -28,13 +28,14 @@ Everything is displayed in a clean, responsive profile card layout and populated
 ## 📁 Project Structure
 RUPG-project/
 │
-├── index.html # Main HTML layout
-├── style.css # Styling for the entire UI
-├── main.js # Application logic and init
-├── user.js # User model with properties
-├── render.js # DOM rendering logic
-├── handleAPI.js # All API fetching and error handling
-└── README.md # Project documentation
+├── index.html       # Main HTML layout
+├── style.css        # Styling for the entire UI
+├── main.js          # Application logic and init
+├── user.js          # User model with properties
+├── render.js        # DOM rendering logic
+├── handleAPI.js     # All API fetching and error handling
+└── README.md        # Project documentation
+
 
 ---
 
