@@ -58,8 +58,8 @@ RUPG-project/
 1. **Clone the repository:**
 
    ```bash
-  git clone git@github.com:yoavuzan/Exercises-TechTroop-JSWithWeb.git
-  
-  cd Exercises-TechTroop-JSWithWeb/RUPG-project
+   git clone git@github.com:yoavuzan/Exercises-TechTroop-JSWithWeb.git
+   cd Exercises-TechTroop-JSWithWeb/RUPG-project
+
 
 
