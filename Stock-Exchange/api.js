@@ -1,5 +1,4 @@
-//import dotenv from "dotenv";
-//dotenv.config();
+import CONFIG from "./config.js";
 
 const aaSearch = [
   {
@@ -96,9 +95,9 @@ function generateSearch(json) {
 }
 
 export /*async*/ function invokeSearchAPIs(stock) {
-  // const url =`https://financialmodelingprep.com/api/v3/search?query=${stock}&limit=10&exchange=NASDAQ&apikey=${process.env.API_KEY}`
-  // const stocksData = awiat fetchData(url,"search stock api")
-  // return generateSearch(stocksData)
+//    const url =`https://financialmodelingprep.com/api/v3/search?query=${stock}&limit=10&exchange=NASDAQ&apikey=${CONFIG.API_KEY}`
+//    const stocksData = await fetchData(url,"search stock api")
+//    return generateSearch(stocksData)
   return generateSearch(aaSearch);
 }
 

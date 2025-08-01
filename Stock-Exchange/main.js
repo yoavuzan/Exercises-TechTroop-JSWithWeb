@@ -15,9 +15,9 @@ input.addEventListener("click", () => {
 
 button.addEventListener(
   "click",
-  /*async*/ () => {
-    //const search = await invokeSearchAPIs(input.value);
-    const search = invokeSearchAPIs(input.value);
+  async () => {
+    const search = await invokeSearchAPIs(input.value);
+    //const search = invokeSearchAPIs(input.value);
     user.setSearch(search);
     render.renderSearch();
   }

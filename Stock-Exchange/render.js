@@ -12,7 +12,7 @@ class Render {
       const li = document.createElement("li");
 
       const link = document.createElement("a");
-      link.href = "./company.html";//?symbol=${encodeURIComponent(obj.symbol)}
+      link.href = `company.html?symbol=${encodeURIComponent(obj.symbol)}`
       link.target ="blank"
       link.textContent = `${obj.name} (${obj.symbol})`;
 
