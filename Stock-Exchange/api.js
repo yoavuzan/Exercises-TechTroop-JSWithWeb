@@ -88,16 +88,35 @@ async function fetchData(url, nameApi) {
 
 function generateSearch(json) {
   const search = json.map(obj => {
-    return { symbol: obj.symbol, name: obj.name };
+    return {
+      symbol: obj.symbol,
+      name: obj.name,
+      logo: obj.profile?.image,              
+      changePercent: obj.profile?.changesPercentage 
+    };
   });
-  console.log(search);
-  return search
+  return search;
 }
 
-export /*async*/ function invokeSearchAPIs(stock) {
-//    const url =`https://financialmodelingprep.com/api/v3/search?query=${stock}&limit=10&exchange=NASDAQ&apikey=${CONFIG.API_KEY}`
-//    const stocksData = await fetchData(url,"search stock api")
-//    return generateSearch(stocksData)
-  return generateSearch(aaSearch);
-}
+export async function invokeSearchAPIs(stock) {
+  const url = `https://financialmodelingprep.com/api/v3/search?query=${stock}&limit=10&exchange=NASDAQ&apikey=${CONFIG.API_KEY}`;
+  const stocksData = await fetchData(url, "search stock api");
 
+  // Get only symbol and name from search
+  const basicSearch = generateSearch(stocksData);
+
+  // Fetch logo & change for each symbol
+  const enrichedSearch = await Promise.all(basicSearch.map(async (obj) => {
+    const profileUrl = `https://financialmodelingprep.com/api/v3/profile/${obj.symbol}?apikey=${CONFIG.API_KEY}`;
+    const profileData = await fetchData(profileUrl, `profile for ${obj.symbol}`);
+    const profile = profileData[0];
+
+    return {
+      ...obj,
+      logo: profile?.image || null,
+      changePercent: parseFloat(profile?.changesPercentage?.replace('%','')) || 0
+    };
+  }));
+
+  return enrichedSearch;
+}

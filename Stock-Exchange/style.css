@@ -42,45 +42,38 @@ body {
 }
 
 #StocksList {
-  list-style-type: none;
   padding: 0;
-  margin-top: 1rem;
+  list-style: none;
 }
 
-#StocksList li {
-  background-color: white;
-  border: 1px solid #ddd;
-  margin-bottom: 0.5rem;
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  transition: background-color 0.3s ease;
+.stock-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-#StocksList li:hover {
-  background-color: #f0f4ff;
+.stock-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
-#StocksList li a {
+.stock-name {
+  flex-grow: 1;
   text-decoration: none;
-  color: #0077ff;
-  font-weight: 500;
+  color: #333;
 }
 
-#StocksList li a:hover {
-  text-decoration: underline;
+.stock-change {
+  font-weight: bold;
 }
 
-@media (max-width: 600px) {
-  #searchContainer {
-    flex-direction: column;
-    align-items: stretch;
-  }
+.stock-change.up {
+  color: green;
+}
 
-  #searchTxt {
-    width: 100%;
-  }
-
-  #searchBtn {
-    width: 100%;
-  }
+.stock-change.down {
+  color: red;
 }
